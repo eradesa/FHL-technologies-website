@@ -47,9 +47,9 @@ export async function POST(request: NextRequest) {
       }, { status: 503 });
     }
 
-    // Call GPT-3.5-turbo
+    // Call GPT-4o-mini
     const completion = await openai.chat.completions.create({
-      model: 'gpt-3.5-turbo',
+      model: 'gpt-4o-mini',
       messages: [
         { role: 'system', content: SYSTEM_PROMPT },
         { role: 'user', content: message }
