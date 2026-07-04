@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+:root {
+  --navy-900: #0a1628;
+  --navy-800: #0d1b2a;
+  --navy-700: #1b2838;
+  --navy-600: #243447;
+  --navy-500: #2d4a5e;
+  
+  --gold-500: #d4a543;
+  --gold-400: #e5b85c;
+  --gold-600: #b8923a;
+  
+  --teal-500: #3a9d9d;
+  --teal-400: #4ab5b5;
+  --teal-600: #2d8585;
+  
+  --orange-500: #e67e22;
+  --orange-400: #f39c3d;
+  
+  --slate-400: #94a3b8;
+  --slate-300: #cbd5e1;
+  --slate-200: #e2e8f0;
+  --slate-100: #f1f5f9;
+  
+  --white: #ffffff;
+  --black: #000000;
+  
+  --background: var(--navy-800);
+  --foreground: var(--white);
+}
+
+@theme inline {
+  --color-navy-900: var(--navy-900);
+  --color-navy-800: var(--navy-800);
+  --color-navy-700: var(--navy-700);
+  --color-navy-600: var(--navy-600);
+  --color-navy-500: var(--navy-500);
+  
+  --color-gold-500: var(--gold-500);
+  --color-gold-400: var(--gold-400);
+  --color-gold-600: var(--gold-600);
+  
+  --color-teal-500: var(--teal-500);
+  --color-teal-400: var(--teal-400);
+  --color-teal-600: var(--teal-600);
+  
+  --color-orange-500: var(--orange-500);
+  --color-orange-400: var(--orange-400);
+  
+  --color-slate-400: var(--slate-400);
+  --color-slate-300: var(--slate-300);
+  --color-slate-200: var(--slate-200);
+  --color-slate-100: var(--slate-100);
+  
+  --font-sans: var(--font-inter);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--navy-900);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gold-500);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-400);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--gold-500), var(--teal-500));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass {
+  background: rgba(13, 27, 42, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 165, 67, 0.1);
+}
+
+.glow-gold {
+  box-shadow: 0 0 30px rgba(212, 165, 67, 0.3);
+}
+
+.glow-teal {
+  box-shadow: 0 0 30px rgba(58, 157, 157, 0.3);
+}
