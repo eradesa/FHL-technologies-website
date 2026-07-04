@@ -1,11 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import OpenAI from 'openai';
 
-// Initialize OpenAI
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY || '',
-});
-
 // System prompt for the chatbot
 const SYSTEM_PROMPT = `You are an AI assistant for F H & L Technologies (Pvt) Ltd, a fintech company in Sri Lanka specializing in AML/CFT/CPF compliance solutions.
 
@@ -40,12 +35,16 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Message is required' }, { status: 400 });
     }
 
-    // If no API key, return error
-    if (!openai.apiKey) {
+    const apiKey = process.env.OPENAI_API_KEY;
+    
+    if (!apiKey) {
       return NextResponse.json({ 
         error: 'AI service not configured. Please contact info@fhltech.lk' 
       }, { status: 503 });
     }
+
+    // Initialize OpenAI at runtime (not build time)
+    const openai = new OpenAI({ apiKey });
 
     // Call GPT-4o-mini
     const completion = await openai.chat.completions.create({
