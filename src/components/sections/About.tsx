@@ -2,12 +2,13 @@
 
 import { motion } from 'framer-motion';
 import { Target, Heart, Award, Users } from 'lucide-react';
+import AnimatedCounter from '@/components/ui/AnimatedCounter';
 
 const stats = [
-  { value: '29+', label: 'Years Banking Experience' },
-  { value: '25+', label: 'Years Software Development' },
-  { value: '9+', label: 'Years Compliance Expertise' },
-  { value: '100%', label: 'Client Satisfaction' },
+  { end: 29, suffix: '+', label: 'Years Banking Experience' },
+  { end: 25, suffix: '+', label: 'Years Software Development' },
+  { end: 9, suffix: '+', label: 'Years Compliance Expertise' },
+  { end: 100, suffix: '%', label: 'Client Satisfaction' },
 ];
 
 const values = [
@@ -66,13 +67,19 @@ export default function About() {
           className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20"
         >
           {stats.map((stat, index) => (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               className="text-center p-6 rounded-2xl bg-navy-800/50 border border-navy-700 hover:border-gold-500/30 transition-colors"
             >
-              <div className="text-4xl md:text-5xl font-bold gradient-text mb-2">{stat.value}</div>
+              <div className="text-4xl md:text-5xl font-bold gradient-text mb-2">
+                <AnimatedCounter end={stat.end} suffix={stat.suffix} />
+              </div>
               <div className="text-slate-400 text-sm">{stat.label}</div>
-            </div>
+            </motion.div>
           ))}
         </motion.div>
 
