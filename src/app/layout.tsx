@@ -11,6 +11,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://fhltech.lk"),
   title: "F H & L Technologies | AML/CFT/CPF Compliance Solutions",
   description: "Technology with Purpose, Solutions with Heart. F H & L Technologies provides enterprise AML/CFT/CPF compliance platforms, goAML audits, regulatory consultancy, and agentic AI solutions for financial institutions in Sri Lanka.",
   keywords: [
@@ -100,6 +101,16 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        {/* Google Analytics */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-XXXXXXXXXX');
+          `
+        }} />
       </head>
       <body className="min-h-full flex flex-col bg-navy-800 antialiased">
         <Navbar />

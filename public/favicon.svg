@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Background -->
+  <rect width="64" height="64" rx="12" fill="#0f172a"/>
+  
+  <!-- Shield shape for compliance/security -->
+  <path d="M32 8L12 18v16c0 10 8.5 19.5 20 22 11.5-2.5 20-12 20-22V18L32 8z" fill="url(#gold)"/>
+  
+  <!-- F letter -->
+  <text x="32" y="42" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#0f172a" text-anchor="middle">F</text>
+  
+  <!-- H L accent -->
+  <text x="32" y="54" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#0f172a" text-anchor="middle">&amp; L</text>
+  
+  <defs>
+    <linearGradient id="gold" x1="12" y1="8" x2="52" y2="56">
+      <stop offset="0%" stop-color="#d4a574"/>
+      <stop offset="50%" stop-color="#f5d799"/>
+      <stop offset="100%" stop-color="#d4a574"/>
+    </linearGradient>
+  </defs>
+</svg>
